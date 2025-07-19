@@ -1,0 +1,291 @@
+/* Reset CSS dasar dan pengaturan font */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Tinggi minimum viewport */
+    background-color: #f0f2f5; /* Warna latar belakang halaman */
+    color: #1c1e21; /* Warna teks default */
+}
+
+/* Container utama aplikasi */
+.container {
+    display: flex;
+    width: 90%; /* Lebar responsif */
+    max-width: 1200px; /* Lebar maksimum */
+    height: 90vh; /* Tinggi responsif */
+    background-color: #fff; /* Latar belakang putih */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+    border-radius: 8px; /* Sudut membulat */
+    overflow: hidden; /* Mengatasi konten meluap */
+}
+
+/* Sidebar untuk daftar chat */
+.sidebar {
+    width: 350px; /* Lebar sidebar */
+    border-right: 1px solid #e0e0e0; /* Garis pemisah */
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f7f7; /* Latar belakang sidebar */
+}
+
+/* Header sidebar */
+.sidebar .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #0056b3; /* Warna header (biru tua) */
+    color: white; /* Warna teks putih */
+}
+
+.sidebar .header h3 {
+    margin: 0;
+}
+
+/* Tombol chat baru di header sidebar */
+.sidebar .header .new-chat-btn {
+    background-color: #28a745; /* Warna hijau */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Bulat sempurna */
+    width: 35px;
+    height: 35px;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s; /* Efek hover */
+}
+
+.sidebar .header .new-chat-btn:hover {
+    background-color: #218838;
+}
+
+/* Bilah pencarian di sidebar */
+.sidebar .search-bar {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.sidebar .search-bar input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box; /* Memastikan padding tidak menambah lebar */
+    font-size: 0.9em;
+}
+
+/* Daftar chat */
+.chat-list {
+    flex-grow: 1; /* Mengisi sisa ruang vertikal */
+    overflow-y: auto; /* Scroll jika konten melebihi tinggi */
+}
+
+/* Setiap item chat */
+.chat-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.chat-item:hover, .chat-item.active {
+    background-color: #e9e9e9; /* Warna hover/aktif */
+}
+
+.chat-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover; /* Memastikan gambar mengisi area */
+}
+
+.chat-item .chat-info {
+    flex-grow: 1;
+}
+
+.chat-item .chat-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 1em;
+    color: #1c1e21;
+}
+
+.chat-item .chat-info p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #65676b;
+    white-space: nowrap; /* Mencegah teks wrap */
+    overflow: hidden; /* Sembunyikan teks yang meluap */
+    text-overflow: ellipsis; /* Tambahkan elipsis (...) jika teks terlalu panjang */
+}
+
+.chat-item .timestamp {
+    font-size: 0.75em;
+    color: #888;
+}
+
+/* Bagian chat utama */
+.main-chat {
+    flex-grow: 1; /* Mengisi sisa ruang horizontal */
+    display: flex;
+    flex-direction: column;
+    background-color: #fcfcfc;
+}
+
+/* Header chat utama */
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #0056b3; /* Warna header (biru tua) */
+    color: white;
+}
+
+.chat-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.chat-header .chat-info {
+    flex-grow: 1;
+}
+
+.chat-header .chat-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+}
+
+.chat-header .chat-info p {
+    margin: 0;
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.chat-header .chat-actions button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* Area pesan dalam chat utama */
+.chat-messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #e5ddd5; /* Warna latar belakang chat WhatsApp */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Setiap pesan */
+.message {
+    max-width: 70%; /* Lebar maksimum pesan */
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    position: relative;
+    word-wrap: break-word; /* Memastikan teks panjang tidak meluap */
+}
+
+.message p {
+    margin: 0;
+    font-size: 0.95em;
+}
+
+.message .msg-timestamp {
+    font-size: 0.7em;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: right;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Pesan yang diterima */
+.message.received {
+    align-self: flex-start; /* Rata kiri */
+    background-color: #ffffff;
+    border-bottom-left-radius: 0; /* Sudut bawah kiri lancip */
+}
+
+/* Pesan yang dikirim */
+.message.sent {
+    align-self: flex-end; /* Rata kanan */
+    background-color: #dcf8c6; /* Warna pesan terkirim WhatsApp */
+    border-bottom-right-radius: 0; /* Sudut bawah kanan lancip */
+}
+
+/* Area input pesan */
+.chat-input {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #f0f0f0;
+    border-top: 1px solid #e0e0e0;
+}
+
+.chat-input button {
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: #65676b;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    color: #1c1e21;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    background-color: #fff;
+    font-size: 1em;
+    outline: none; /* Hilangkan outline saat fokus */
+    margin: 0 10px;
+}
+
+/* Media Queries untuk Responsif */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Tata letak kolom di layar kecil */
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: 40%; /* Mengambil 40% tinggi layar */
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .main-chat {
+        flex-grow: 1;
+        height: 60%; /* Mengambil 60% tinggi layar */
+    }
+
+    /* Opsional: Sembunyikan bilah pencarian di mobile untuk tampilan yang lebih ringkas */
+    .sidebar .search-bar {
+        display: none;
+    }
+}
