@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Pesan Sederhana</title>
+    <!-- Menghubungkan file CSS untuk styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Bagian sidebar untuk daftar chat/kontak -->
+        <div class="sidebar">
+            <div class="header">
+                <h3>Chats</h3>
+                <button class="new-chat-btn">+</button>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Cari atau mulai chat baru...">
+            </div>
+            <div class="chat-list">
+                <!-- Contoh item chat, akan diisi dinamis oleh JS -->
+                <div class="chat-item active" data-chat-id="1">
+                    <img src="https://via.placeholder.com/50/FF5733/FFFFFF?text=JD" alt="User 1">
+                    <div class="chat-info">
+                        <h4>John Doe</h4>
+                        <p>Hai, apa kabar?</p>
+                    </div>
+                    <span class="timestamp">10:30 AM</span>
+                </div>
+                <div class="chat-item" data-chat-id="2">
+                    <img src="https://via.placeholder.com/50/33FF57/FFFFFF?text=JS" alt="User 2">
+                    <div class="chat-info">
+                        <h4>Jane Smith</h4>
+                        <p>Oke, sampai nanti!</p>
+                    </div>
+                    <span class="timestamp">Kemarin</span>
+                </div>
+            </div>
+        </div>
+        <!-- Bagian utama untuk tampilan chat -->
+        <div class="main-chat">
+            <div class="chat-header">
+                <img src="https://via.placeholder.com/50/FF5733/FFFFFF?text=JD" alt="Current Chat User">
+                <div class="chat-info">
+                    <h4>John Doe</h4>
+                    <p>Online</p>
+                </div>
+                <div class="chat-actions">
+                    <!-- Ikon pencarian (unicode) -->
+                    <button>&#x1F50D;</button>
+                    <!-- Ikon opsi lainnya (unicode) -->
+                    <button>&#x22EE;</button>
+                </div>
+            </div>
+            <!-- Area pesan, akan diisi oleh JavaScript -->
+            <div class="chat-messages" id="chat-messages">
+                <!-- Pesan contoh -->
+                <div class="message received">
+                    <p>Hai, apa kabar?</p>
+                    <span class="msg-timestamp">10:28 AM</span>
+                </div>
+                <div class="message sent">
+                    <p>Baik, kamu?</p>
+                    <span class="msg-timestamp">10:29 AM</span>
+                </div>
+            </div>
+            <!-- Area input pesan -->
+            <div class="chat-input">
+                <!-- Ikon emoji (unicode) -->
+                <button>&#x1F60A;</button>
+                <input type="text" id="message-input" placeholder="Ketik pesan...">
+                <!-- Ikon kirim (unicode) -->
+                <button id="send-button">&#x27A4;</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menghubungkan file JavaScript untuk fungsionalitas -->
+    <script src="script.js"></script>
+</body>
+</html>
